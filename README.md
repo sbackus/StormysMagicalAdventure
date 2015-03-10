@@ -2,6 +2,7 @@
 This an eclipse project containing all the files necessary to begin developing games with [Slick 2D](http://slick.ninjacave.com/). You can fork this repository, clone it on your disk and start to work in Eclipse.
 
 After having cloned the repository to your disk you have to follow these few steps:
+
 1. Open up Eclipse.
 2. Create a new java project and select the folder containing this seed.
 2. Go to Project --> Properties in the menu bar.
