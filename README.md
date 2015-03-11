@@ -3,14 +3,13 @@ This an eclipse project containing all the files necessary to begin developing g
 
 After having cloned the repository to your disk you have to follow these few steps:
 
-1. Open up Eclipse.
-2. Create a new java project and select the folder containing this seed.
-2. Right click on the project and select Properties.
-3. Click on Java Build Path.
+1. Open Eclipse.
+2. Create a new java project selecting the local cloned folder.
+2. Right click on the project and select *Properties*.
+3. Click on *Java Build Path*.
 4. Expand *lwjgl.jar*.
-5. Select *Natives Library Location* and click the Edit button.
-6. Click the Workspace button.
-7. Select the *native* folder in your project
-8. Select your operating system and click OK until you get back to the default eclipse window.
-9. Press play to check it it works.
-10. Now, you can start making your own game.
+5. Select *Natives Library Location* and click the *Edit* button.
+6. Click the *Workspace* button.
+7. Open the *native* folder in your project and select the folder for your operating system
+8. Click *OK* until you get back to the default eclipse window.
+9. Select *SimpleSlickGame.java* from the *Package Explorer* and press play to check it it works.
