@@ -5,7 +5,7 @@ After having cloned the repository to your disk you have to follow these few ste
 
 1. Open up Eclipse.
 2. Create a new java project and select the folder containing this seed.
-2. Go to Project --> Properties in the menu bar.
+2. Go to Project -> Properties in the menu bar.
 3. Click on Java Build Path.
 4. click the Add Jar button.
 5. Select the *lib* folder in your project.
