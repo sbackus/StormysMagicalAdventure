@@ -5,7 +5,7 @@ After having cloned the repository to your disk you have to follow these few ste
 
 1. Open up Eclipse.
 2. Create a new java project and select the folder containing this seed.
-2. Go to Project --> Properties in the menu bar.
+2. Right click on the project and select Properties.
 3. Click on Java Build Path.
 4. Expand *lwjgl.jar*.
 5. Select *Natives Library Location* and click the Edit button.
