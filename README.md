@@ -10,6 +10,6 @@ After having cloned the repository to your disk you have to follow these few ste
 4. Expand *lwjgl.jar*.
 5. Select *Natives Library Location* and click the *Edit* button.
 6. Click the *Workspace* button.
-7. Open the *native* folder in your project and select the folder for your operating system
+7. Select the *native* folder in your project.
 8. Click *OK* until you get back to the default eclipse window.
 9. Select *SimpleSlickGame.java* from the *Package Explorer* and press play to check it it works.
