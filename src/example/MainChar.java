@@ -35,6 +35,7 @@ public class MainChar {
 		for (int j = 0; j < character.size(); j++) {
 			if (this.collide(character.get(j))) {
 				x += 100;
+				
 			}
 		}
 
@@ -54,11 +55,7 @@ public class MainChar {
 	}
 
 	public boolean collide(Char target) {
-		if (target.getVector().distance(new Vector2f(x, y)) <= 60) {
-			return true;
-		} else {
-			return false;
-		}
+		return target.getVector().distance(new Vector2f(x, y)) <= 60;
 	}
 
 }
