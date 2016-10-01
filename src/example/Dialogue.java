@@ -95,6 +95,8 @@ public class Dialogue {
 			if (currentLine == dialogues.size()) {
 				game.toggleGamemode();
 				currentLine = 0;
+				if (correct == null || wrong == null)
+					game.nextScene();
 			}
 		} else if (track == 2) {
 			if (currentLine == correct.size()) {
