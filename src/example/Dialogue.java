@@ -35,7 +35,7 @@ public class Dialogue {
 	CharAnimation annieSadAnimation;
 	CharAnimation juniperHappyAnimation;
 	CharAnimation juniperSadAnimation;
-	
+
 	Image dialogueBackground;
 
 	public Dialogue(ArrayList<String> _dialogues, int _rightAnswer, ArrayList<String> _correct,
@@ -43,21 +43,31 @@ public class Dialogue {
 		dialogueBackground = new Image("images/textbox.png");
 		x = 50;
 		y = 600;
-		
-		mainCharAnimation = new CharAnimation(new Image []{new Image("images/Stormy1.png"), new Image("images/Stormy2.png"), new Image("images/Stormy3.png")},50, 20);
-		javarisAnimation = new CharAnimation(new Image []{new Image("images/Wizard2_big.png")},460, 20);
-		leoHappyAnimation = new CharAnimation(new Image []{new Image("images/LeopoldContent1..png")},460, 20);
-		leoSadAnimation = new CharAnimation(new Image []{new Image("images/LeopoldDistraught1.png")},460, 20);
-		julianHappyAnimation = new CharAnimation(new Image []{new Image("images/LeopoldContent1..png")},460, 20);
-		julianSadAnimation = new CharAnimation(new Image []{new Image("images/LeopoldDistraught1.png")},460, 20);
-		christianHappyAnimation = new CharAnimation(new Image []{new Image("images/LeopoldContent1..png")},460, 20);
-		christianSadAnimation = new CharAnimation(new Image []{new Image("images/LeopoldDistraught1.png")},460, 20);
-		annieHappyAnimation = new CharAnimation(new Image []{new Image("images/AnnieContent1.png"), new Image("images/AnnieContent2.png"), new Image("images/AnnieContent2.png")},460, 20);
-		annieSadAnimation = new CharAnimation(new Image []{new Image("images/AnnieDistraught1.png"),new Image("images/AnnieDistraught2.png"),new Image("images/AnnieDistraught3.png")},460, 20);
-		juniperHappyAnimation = new CharAnimation(new Image []{new Image("images/LeopoldContent1..png")},460, 20);
-		juniperSadAnimation = new CharAnimation(new Image []{new Image("images/LeopoldDistraught1.png")},460, 20);
 
-		
+		mainCharAnimation = new CharAnimation(new Image[] { new Image("images/Stormy1.png"),
+				new Image("images/Stormy2.png"), new Image("images/Stormy3.png") }, 50, 20);
+		javarisAnimation = new CharAnimation(new Image[] { new Image("images/Wizard2_big.png") }, 460, 250);
+		leoHappyAnimation = new CharAnimation(new Image[] { new Image("images/LeoRelax1.png"),
+				new Image("images/LeoRelax2.png"), new Image("images/LeoRelax3.png") }, 460, 20);
+		leoSadAnimation = new CharAnimation(new Image[] { new Image("images/LeoStressed1.png"),
+				new Image("images/LeoStressed2.png"), new Image("images/LeoStressed3.png") }, 460, 20);
+		julianHappyAnimation = new CharAnimation(new Image[] { new Image("images/JulianRelax1.png"),
+				new Image("images/JulianRelax2.png"), new Image("images/JulianRelax3.png") }, 460, 20);
+		julianSadAnimation = new CharAnimation(new Image[] { new Image("images/JulianStressed1.png"),
+				new Image("images/JulianStressed2.png"), new Image("images/JulianStressed3.png") }, 460, 20);
+		christianHappyAnimation = new CharAnimation(new Image[] { new Image("images/ChristianContent1.png"),
+				new Image("images/ChristianContent2.png"), new Image("images/ChristianContent3.png") }, 460, 20);
+		christianSadAnimation = new CharAnimation(new Image[] { new Image("images/ChristianStressed1.png"),
+				new Image("images/ChristianStressed2.png"), new Image("images/ChristianStressed3.png") }, 460, 20);
+		annieHappyAnimation = new CharAnimation(new Image[] { new Image("images/AnnieContent1.png"),
+				new Image("images/AnnieContent2.png"), new Image("images/AnnieContent2.png") }, 460, 20);
+		annieSadAnimation = new CharAnimation(new Image[] { new Image("images/AnnieStressed1.png"),
+				new Image("images/AnnieStressed2.png"), new Image("images/AnnieStressed3.png") }, 460, 20);
+		juniperHappyAnimation = new CharAnimation(new Image[] { new Image("images/JuniperContent1.png"),
+				new Image("images/JuniperContent2.png"), new Image("images/JuniperContent3.png") }, 460, 20);
+		juniperSadAnimation = new CharAnimation(new Image[] { new Image("images/JuniperStressed1.png"),
+				new Image("images/JuniperStressed2.png"), new Image("images/JuniperStressed3.png") }, 460, 20);
+
 		rightAnswer = _rightAnswer;
 		dialogues = _dialogues;
 		correct = _correct;
@@ -71,6 +81,27 @@ public class Dialogue {
 
 		mainCharAnimation = new CharAnimation(new Image[] { new Image("images/Stormy1.png"),
 				new Image("images/Stormy2.png"), new Image("images/Stormy3.png") }, 50, 20);
+		javarisAnimation = new CharAnimation(new Image[] { new Image("images/Wizard2_big.png") }, 460, 250);
+		leoHappyAnimation = new CharAnimation(new Image[] { new Image("images/LeoRelax1.png"),
+				new Image("images/LeoRelax2.png"), new Image("images/LeoRelax3.png") }, 460, 20);
+		leoSadAnimation = new CharAnimation(new Image[] { new Image("images/LeoStressed1.png"),
+				new Image("images/LeoStressed2.png"), new Image("images/LeoStressed3.png") }, 460, 20);
+		julianHappyAnimation = new CharAnimation(new Image[] { new Image("images/JulianRelax1.png"),
+				new Image("images/JulianRelax2.png"), new Image("images/JulianRelax3.png") }, 460, 20);
+		julianSadAnimation = new CharAnimation(new Image[] { new Image("images/JulianStressed1.png"),
+				new Image("images/JulianStressed2.png"), new Image("images/JulianStressed3.png") }, 460, 20);
+		christianHappyAnimation = new CharAnimation(new Image[] { new Image("images/ChristianContent1.png"),
+				new Image("images/ChristianContent2.png"), new Image("images/ChristianContent3.png") }, 460, 20);
+		christianSadAnimation = new CharAnimation(new Image[] { new Image("images/ChristianStressed1.png"),
+				new Image("images/ChristianStressed2.png"), new Image("images/ChristianStressed3.png") }, 460, 20);
+		annieHappyAnimation = new CharAnimation(new Image[] { new Image("images/AnnieContent1.png"),
+				new Image("images/AnnieContent2.png"), new Image("images/AnnieContent2.png") }, 460, 20);
+		annieSadAnimation = new CharAnimation(new Image[] { new Image("images/AnnieStressed1.png"),
+				new Image("images/AnnieStressed2.png"), new Image("images/AnnieStressed3.png") }, 460, 20);
+		juniperHappyAnimation = new CharAnimation(new Image[] { new Image("images/JuniperContent1.png"),
+				new Image("images/JuniperContent2.png"), new Image("images/JuniperContent3.png") }, 460, 20);
+		juniperSadAnimation = new CharAnimation(new Image[] { new Image("images/JuniperStressed1.png"),
+				new Image("images/JuniperStressed2.png"), new Image("images/JuniperStressed3.png") }, 460, 20);
 
 		dialogues = _dialogues;
 	}
