@@ -10,7 +10,7 @@ import org.newdawn.slick.SlickException;
 public class Dialogue {
 
 	int x, y;
-	int target = 0;
+	int currentLine = 0;
 
 	boolean riddleCond = false;
 	boolean endCond = false;
@@ -34,27 +34,27 @@ public class Dialogue {
 	public void update(GameContainer gc, int i, SimpleSlickGame game) throws SlickException {
 		Input input = gc.getInput();
 
-		if (target == dialogues.size() - 3) {
+		if (dialogues.get(currentLine).contains("Riddle:")) {
 			riddleCond = true;
 		}
 		if (input.isKeyPressed(Input.KEY_1) && riddleCond == true) {
-			target = dialogues.size() - 2;
+			currentLine = dialogues.size() - 2;
 			riddleCond = false;
 			endCond = true;
 		} else if (input.isKeyPressed(Input.KEY_2) && riddleCond == true) {
-			target = dialogues.size() - 1;
+			currentLine = dialogues.size() - 1;
 			riddleCond = false;
 		} else if (input.isKeyPressed(Input.KEY_3) && riddleCond == true) {
-			target = dialogues.size() - 1;
+			currentLine = dialogues.size() - 1;
 			riddleCond = false;
 		} else if (input.isKeyPressed(Input.KEY_4) && riddleCond == true) {
-			target = dialogues.size() - 1;
+			currentLine = dialogues.size() - 1;
 			riddleCond = false;
-		} else if (input.isKeyPressed(Input.KEY_SPACE) && target < dialogues.size() && riddleCond == false) {
-			target++;
-		} else if (target == dialogues.size() || (target == dialogues.size() - 1 && endCond == true)) {
+		} else if (input.isKeyPressed(Input.KEY_SPACE) && currentLine < dialogues.size() && riddleCond == false) {
+			currentLine++;
+		} else if (currentLine == dialogues.size() || (currentLine == dialogues.size() - 1 && endCond == true)) {
 			game.toggleGamemode();
-			target = 0;
+			currentLine = 0;
 			if (endCond == true)
 			{
 				game.nextScene();
@@ -66,8 +66,8 @@ public class Dialogue {
 	public void render(GameContainer gc, Graphics g) throws SlickException {
 		dialogueBackground.draw(x, y, 900, 175);
 
-		if (target < dialogues.size()) {
-			g.drawString(dialogues.get(target), 75, 625);
+		if (currentLine < dialogues.size()) {
+			g.drawString(dialogues.get(currentLine), 75, 625);
 		}
 	}
 	
