@@ -7,7 +7,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
-public class Dialogue1 {
+public class Dialogue {
 
 	int x, y;
 	int target = 0;
@@ -17,22 +17,14 @@ public class Dialogue1 {
 	boolean nextScene = false;
 	ArrayList<String> dialogues;
 
-	Image dialogue;
+	Image dialogueBackground;
 
-	public Dialogue1(Image image, int _x, int _y) {
-		dialogue = image;
-		x = _x;
-		y = _y;
+	public Dialogue(ArrayList<String> _dialogues) throws SlickException {
+		dialogueBackground = new Image("images/textbox.png");
+		x = 50;
+		y = 600;
 
-		dialogues = new ArrayList<String>();
-
-		dialogues.add("Hello");
-		dialogues.add("Good bye");
-		dialogues.add("what's up \n its 2:30AM");
-		dialogues.add("Riddle Time!");
-		dialogues.add("Riddle: \n What is the thing for the thing \n1. Correct Answer\n2. option 2\n3. option 3\n4. option 4");
-		dialogues.add("You are correct");
-		dialogues.add("You are wrong");
+		dialogues = _dialogues;
 	}
 
 	public void init(GameContainer gc) throws SlickException {
@@ -72,7 +64,7 @@ public class Dialogue1 {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException {
-		dialogue.draw(x, y, 900, 175);
+		dialogueBackground.draw(x, y, 900, 175);
 
 		if (target < dialogues.size()) {
 			g.drawString(dialogues.get(target), 75, 625);

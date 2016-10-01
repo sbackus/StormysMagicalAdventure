@@ -19,8 +19,8 @@ public class SimpleSlickGame extends BasicGame {
 	Char npc1;
 	Char npc2;
 
-	Dialogue1 dialogue1;
-	Dialogue2 dialogue2;
+	Dialogue dialogue1;
+	Dialogue dialogue2;
 
 	int gamemode = 1;
 	int scene = 1;
@@ -37,11 +37,31 @@ public class SimpleSlickGame extends BasicGame {
 		background = new Image("images/background.jpg");
 		npc1 = new Char(new Image("images/character1.jpg"), 200, 200);
 		oldMan = new MainChar(new Image("images/oldman.jpg"));
-		dialogue1 = new Dialogue1(new Image("images/textbox.png"), 50, 600);
+		
+		
+		ArrayList<String> dialogues = new ArrayList<String>();
+
+		dialogues.add("Hello");
+		dialogues.add("Good bye");
+		dialogues.add("what's up \n its 2:30AM");
+		dialogues.add("Riddle Time!");
+		dialogues.add("Riddle: \n What is the thing for the thing \n1. Correct Answer\n2. option 2\n3. option 3\n4. option 4");
+		dialogues.add("You are correct");
+		dialogues.add("You are wrong");
+		dialogue1 = new Dialogue(dialogues);
 
 		background2 = new Image("images/Background2.jpg");
 		npc2 = new Char(new Image("images/shark.gif"), 400, 400);
-		dialogue2 = new Dialogue2(new Image("images/textbox.png"), 50, 600);
+		
+		
+		dialogues = new ArrayList<String>();
+
+		dialogues.add("This is new");
+		dialogues.add("Oh shit whaddup");
+		dialogues.add("Riddle: \n What is the thing for the thing \n1. Correct Answer\n2. option 2\n3. option 3\n4. option 4");
+		dialogues.add("You are correct");
+		dialogues.add("You are wrong");
+		dialogue2 = new Dialogue(dialogues);
 
 		characters = new ArrayList<Char>();
 		characters.add(npc1);
