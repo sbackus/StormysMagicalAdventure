@@ -15,9 +15,23 @@ public class Dialogue {
 	boolean endCond = false;
 	boolean nextScene = false;
 	ArrayList<String> dialogues;
+	ArrayList<String> correct;
+	ArrayList<String> wrong;
+	int rightAnswer;
 
 	Image dialogueBackground;
 
+	public Dialogue(ArrayList<String> _dialogues, int _rightAnswer, ArrayList<String> _correct, ArrayList<String> _wrong) throws SlickException {
+		dialogueBackground = new Image("images/textbox.png");
+		x = 50;
+		y = 600;
+
+		rightAnswer = _rightAnswer;
+		dialogues = _dialogues;
+		correct = _correct;
+		wrong = _wrong;
+	}
+	
 	public Dialogue(ArrayList<String> _dialogues) throws SlickException {
 		dialogueBackground = new Image("images/textbox.png");
 		x = 50;
@@ -36,13 +50,41 @@ public class Dialogue {
 		System.out.println(game.getScene());
 		if (dialogues.get(currentLine).contains("Riddle:")) {
 			if (input.isKeyPressed(Input.KEY_1) ) {
+				if(rightAnswer == 1){
+					//show trhe correct dialogeu
+				}
+				else
+				{
+					//show wrong answer
+				}
 				currentLine = dialogues.size() - 2;
 				endCond = true;
 			} else if (input.isKeyPressed(Input.KEY_2) ) {
+				if(rightAnswer == 2){
+					//show trhe correct dialogeu
+				}
+				else
+				{
+					//show wrong answer
+				}
 				currentLine = dialogues.size() - 1;
 			} else if (input.isKeyPressed(Input.KEY_3)) {
+				if(rightAnswer == 3){
+					//show trhe correct dialogeu
+				}
+				else
+				{
+					//show wrong answer
+				}
 				currentLine = dialogues.size() - 1;
 			} else if (input.isKeyPressed(Input.KEY_4)) {
+				if(rightAnswer == 4){
+					//show trhe correct dialogeu
+				}
+				else
+				{
+					//show wrong answer
+				}
 				currentLine = dialogues.size() - 1;
 			}
 		}
@@ -51,8 +93,15 @@ public class Dialogue {
 				currentLine++;
 			}  
 		}
-		if (currentLine == dialogues.size() || (currentLine == dialogues.size() - 1 && endCond == true)) {
-			System.out.println("Do we get here?");
+		
+		if (correct == null && wrong == null ){
+			if (currentLine == dialogues.size()){
+				game.toggleGamemode();
+				currentLine = 0;
+			}
+		}
+		
+		if (currentLine == dialogues.size() && endCond == true) {
 			game.toggleGamemode();
 			currentLine = 0;
 			if (endCond == true)
@@ -62,7 +111,7 @@ public class Dialogue {
 		}
 
 	}
-
+	
 	public void render(GameContainer gc, Graphics g) throws SlickException {
 		dialogueBackground.draw(x, y, 900, 175);
 

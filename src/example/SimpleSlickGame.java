@@ -40,15 +40,24 @@ public class SimpleSlickGame extends BasicGame {
 		
 		
 		ArrayList<String> dialogues = new ArrayList<String>();
-
+		
 		dialogues.add("Hello");
 		dialogues.add("Good bye");
 		dialogues.add("what's up \n its 2:30AM");
 		dialogues.add("Riddle Time!");
 		dialogues.add("Riddle: \n What is the thing for the thing \n1. Correct Answer\n2. option 2\n3. option 3\n4. option 4");
-		dialogues.add("You are correct");
-		dialogues.add("You are wrong");
-		dialogue1 = new Dialogue(dialogues);
+		
+		ArrayList<String> correct = new ArrayList<String>();
+		
+		correct.add("You are correct");
+		correct.add("Horray");
+		
+		ArrayList<String> wrong = new ArrayList<String>();
+
+		wrong.add("You are wrong");
+		wrong.add("Try again fool.");
+		
+		dialogue1 = new Dialogue(dialogues, correct, wrong);
 
 		background2 = new Image("images/Background2.jpg");
 		npc2 = new Char(new Image("images/shark.gif"), 400, 400);
