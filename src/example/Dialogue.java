@@ -6,6 +6,7 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.SpriteSheet;
 
 public class Dialogue {
 
@@ -22,6 +23,8 @@ public class Dialogue {
 	ArrayList<String> correct;
 	ArrayList<String> wrong;
 	int rightAnswer;
+	
+	CharAnimation mainCharAnimation;
 
 	Image dialogueBackground;
 
@@ -30,7 +33,8 @@ public class Dialogue {
 		dialogueBackground = new Image("images/textbox.png");
 		x = 50;
 		y = 600;
-
+		
+		mainCharAnimation = new CharAnimation(new Image []{new Image("images/StormySpriteSheetPhase1.png") },100, 20);
 		rightAnswer = _rightAnswer;
 		dialogues = _dialogues;
 		correct = _correct;
@@ -42,6 +46,8 @@ public class Dialogue {
 		x = 50;
 		y = 600;
 
+		mainCharAnimation = new CharAnimation(new Image []{new Image("images/StormySpriteSheetPhase1.png") },0, 0);
+		
 		dialogues = _dialogues;
 	}
 
@@ -51,7 +57,9 @@ public class Dialogue {
 
 	public void update(GameContainer gc, int i, SimpleSlickGame game) throws SlickException {
 		Input input = gc.getInput();
-
+		
+		mainCharAnimation.update(i);
+		
 		System.out.println(game.getScene());
 
 		if (dialogues.get(currentLine).contains("Riddle:")) {
@@ -116,21 +124,24 @@ public class Dialogue {
 
 	public void render(GameContainer gc, Graphics g) throws SlickException {
 		dialogueBackground.draw(x, y, 900, 175);
-
+		String line = "";
 		if (track == 1) {
 			if (currentLine < dialogues.size()) {
-				g.drawString(dialogues.get(currentLine), 75, 625);
+				line = dialogues.get(currentLine);
 			}
 		} else if (track == 2) {
 			if (currentLine < correct.size()) {
-				g.drawString(correct.get(currentLine), 75, 625);
+				line = correct.get(currentLine);
 			}
 		} else if (track == 3) {
 			if (currentLine < wrong.size()) {
-				g.drawString(wrong.get(currentLine), 75, 625);
+				line = wrong.get(currentLine);
 			}
 		}
-
+		if (line.contains("Stormy: ")){
+			mainCharAnimation.draw();
+		}
+		g.drawString(line, 75, 625);
 	}
 
 }

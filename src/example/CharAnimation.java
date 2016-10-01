@@ -11,31 +11,30 @@ public class CharAnimation {
 	
 	SpriteSheet spriteSheet;
 	Animation happyAnimation;
-	Animation distraughtAnimation;
+	int x;
+	int y;
 	
-	public CharAnimation(SpriteSheet spriteSheet) throws SlickException{
-		happyAnimation = new Animation(new Image [] {spriteSheet.getSubImage(0, 0), spriteSheet.getSubImage(0, 1), spriteSheet.getSubImage(0, 2)},4000);
-		distraughtAnimation = new Animation(new Image [] {spriteSheet.getSubImage(1, 0), spriteSheet.getSubImage(1, 1), spriteSheet.getSubImage(1, 2)},4000 );
-	}
+//	public CharAnimation(SpriteSheet spriteSheet, int _x, int _y) throws SlickException{
+//		happyAnimation = new Animation(new Image [] {spriteSheet.getSubImage(0, 0), spriteSheet.getSubImage(0, 1), spriteSheet.getSubImage(0, 2)},4000);
+//		distraughtAnimation = new Animation(new Image [] {spriteSheet.getSubImage(1, 0), spriteSheet.getSubImage(1, 1), spriteSheet.getSubImage(1, 2)},4000 );
+//		x = _x;
+//		y = _y;	
+//	}
 	
-	public CharAnimation(Image[] images) throws SlickException{
+	public CharAnimation(Image[] images, int _x, int _y) throws SlickException{
 		happyAnimation = new Animation(images,4000);
-		distraughtAnimation = new Animation(images,4000 );
+		x = _x;
+		y = _y;	
 	}
 	
 	public void update(int delta){
-		distraughtAnimation.update(delta);
 		happyAnimation.update(delta);
 	}
 	
-	public void drawHappy(){
-		happyAnimation.draw(400, 20);
-		
+	public void draw(){
+		happyAnimation.draw(x, y);
 	}
 	
-	public void drawDistraught(){
-		distraughtAnimation.update(50);
-		distraughtAnimation.draw(460, 20);
-	}
+	
 
 }
