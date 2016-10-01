@@ -12,7 +12,6 @@ public class Dialogue {
 	int x, y;
 	int currentLine = 0;
 
-	boolean riddleCond = false;
 	boolean endCond = false;
 	boolean nextScene = false;
 	ArrayList<String> dialogues;
@@ -33,26 +32,27 @@ public class Dialogue {
 
 	public void update(GameContainer gc, int i, SimpleSlickGame game) throws SlickException {
 		Input input = gc.getInput();
-
+		
+		System.out.println(game.getScene());
 		if (dialogues.get(currentLine).contains("Riddle:")) {
-			riddleCond = true;
+			if (input.isKeyPressed(Input.KEY_1) ) {
+				currentLine = dialogues.size() - 2;
+				endCond = true;
+			} else if (input.isKeyPressed(Input.KEY_2) ) {
+				currentLine = dialogues.size() - 1;
+			} else if (input.isKeyPressed(Input.KEY_3)) {
+				currentLine = dialogues.size() - 1;
+			} else if (input.isKeyPressed(Input.KEY_4)) {
+				currentLine = dialogues.size() - 1;
+			}
 		}
-		if (input.isKeyPressed(Input.KEY_1) && riddleCond == true) {
-			currentLine = dialogues.size() - 2;
-			riddleCond = false;
-			endCond = true;
-		} else if (input.isKeyPressed(Input.KEY_2) && riddleCond == true) {
-			currentLine = dialogues.size() - 1;
-			riddleCond = false;
-		} else if (input.isKeyPressed(Input.KEY_3) && riddleCond == true) {
-			currentLine = dialogues.size() - 1;
-			riddleCond = false;
-		} else if (input.isKeyPressed(Input.KEY_4) && riddleCond == true) {
-			currentLine = dialogues.size() - 1;
-			riddleCond = false;
-		} else if (input.isKeyPressed(Input.KEY_SPACE) && currentLine < dialogues.size() && riddleCond == false) {
-			currentLine++;
-		} else if (currentLine == dialogues.size() || (currentLine == dialogues.size() - 1 && endCond == true)) {
+		else{
+			if (input.isKeyPressed(Input.KEY_SPACE) && currentLine < dialogues.size()) {
+				currentLine++;
+			}  
+		}
+		if (currentLine == dialogues.size() || (currentLine == dialogues.size() - 1 && endCond == true)) {
+			System.out.println("Do we get here?");
 			game.toggleGamemode();
 			currentLine = 0;
 			if (endCond == true)
