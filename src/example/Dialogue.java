@@ -34,7 +34,7 @@ public class Dialogue {
 		x = 50;
 		y = 600;
 		
-		mainCharAnimation = new CharAnimation(new Image []{new Image("images/StormySpriteSheetPhase1.png") },100, 20);
+		mainCharAnimation = new CharAnimation(new Image []{new Image("images/Stormy1.png"), new Image("images/Stormy2.png"), new Image("images/Stormy3.png")},50, 20);
 		rightAnswer = _rightAnswer;
 		dialogues = _dialogues;
 		correct = _correct;
@@ -46,7 +46,7 @@ public class Dialogue {
 		x = 50;
 		y = 600;
 
-		mainCharAnimation = new CharAnimation(new Image []{new Image("images/StormySpriteSheetPhase1.png") },0, 0);
+		mainCharAnimation = new CharAnimation(new Image []{new Image("images/Stormy1.png"), new Image("images/Stormy2.png"), new Image("images/Stormy3.png")},50, 20);
 		
 		dialogues = _dialogues;
 	}
@@ -123,7 +123,7 @@ public class Dialogue {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException {
-		dialogueBackground.draw(x, y, 900, 175);
+		
 		String line = "";
 		if (track == 1) {
 			if (currentLine < dialogues.size()) {
@@ -141,6 +141,11 @@ public class Dialogue {
 		if (line.contains("Stormy: ")){
 			mainCharAnimation.draw();
 		}
+		if (line.contains("Javaris: "))
+		{
+			
+		}
+		dialogueBackground.draw(x, y, 900, 175);
 		g.drawString(line, 75, 625);
 	}
 

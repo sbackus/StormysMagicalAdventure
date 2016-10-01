@@ -22,7 +22,7 @@ public class CharAnimation {
 //	}
 	
 	public CharAnimation(Image[] images, int _x, int _y) throws SlickException{
-		happyAnimation = new Animation(images,4000);
+		happyAnimation = new Animation(images,1000);
 		x = _x;
 		y = _y;	
 	}
