@@ -23,6 +23,11 @@ public class SimpleSlickGame extends BasicGame {
 	MainChar oldMan;
 	Char npc1;
 	Char npc2;
+	Char npc3;
+	Char npc4;
+	Char npc5;
+	Char npc6;
+	Char npc7;
 
 	Dialogue dialogue1;
 	Dialogue dialogue2;
@@ -44,10 +49,10 @@ public class SimpleSlickGame extends BasicGame {
 	@Override
 	public void init(GameContainer gc) throws SlickException {
 
-		oldMan = new MainChar(new Image("images/oldman.jpg"));
+		oldMan = new MainChar(new Image("images/StormyOverworld.png"));
 
 		background1 = new Image("images/background.jpg");
-		npc1 = new Char(new Image("images/character1.jpg"), 200, 200);
+		npc1 = new Char(new Image("images/wizard2.png"), 200, 500);
 
 		ArrayList<String> dialogues = new ArrayList<String>();
 		ArrayList<String> correct = new ArrayList<String>();
@@ -73,8 +78,9 @@ public class SimpleSlickGame extends BasicGame {
 
 		dialogue1 = new Dialogue(dialogues);
 
+		
 		background2 = new Image("images/Background2.jpg");
-		npc2 = new Char(new Image("images/shark.gif"), 400, 400);
+		npc2 = new Char(new Image("images/LeoOverworld.png"), 300, 400);
 
 		dialogues = new ArrayList<String>();
 		correct = new ArrayList<String>();
@@ -104,8 +110,10 @@ public class SimpleSlickGame extends BasicGame {
 
 		dialogue2 = new Dialogue(dialogues, 2, correct, wrong);
 
+		
 		background3 = new Image("images/background3.png");
-
+		npc3 = new Char(new Image("images/JulianOverworld.png"), 600, 300);
+		
 		dialogues = new ArrayList<String>();
 		correct = new ArrayList<String>();
 		wrong = new ArrayList<String>();
@@ -125,7 +133,7 @@ public class SimpleSlickGame extends BasicGame {
 				"Julian: Riddle: ÅeWhy do chemists like nitrates so much?Åf I canÅft think \nof anything beyond the obvious scientific reasons! \n1. They're cheaper than day rates \n2. Polyatmoic ions are lyfe \n3. Because those chemists need to go outside \n4. Because... science?");
 
 		correct.add(
-				"Julian: That was probably the worst joke IÅfve ever heard, but I think thatÅfs the solution!  Why do our professors torture us so?");
+				"Julian: That was probably the worst joke IÅfve ever heard, but I think thatÅfs the solution!  \nWhy do our professors torture us so?");
 		correct.add(
 				"Stormy: I donÅft know!  WhatÅfs with all these teachers giving riddles on \ntheir finals?  Seems a bit out of character and silly and causing unnecessary stress.  \nIÅfm so glad we solved that though!");
 		correct.add(
@@ -136,8 +144,10 @@ public class SimpleSlickGame extends BasicGame {
 
 		dialogue3 = new Dialogue(dialogues, 1, correct, wrong);
 
+		
 		background4 = new Image("images/background4.png");
-
+		npc4 = new Char(new Image("images/ChristianOverworld.png"), 300, 300);
+		
 		dialogues = new ArrayList<String>();
 		correct = new ArrayList<String>();
 		wrong = new ArrayList<String>();
@@ -159,11 +169,11 @@ public class SimpleSlickGame extends BasicGame {
 		dialogues.add(
 				"Stormy: Oh no maybe I can help?  ItÅfs gonna sound crazy but I had this dream and this \neccentric wizard dude said you may be having some trouble with \nfinals so I came to check on you.");
 		dialogues.add(
-				"Christian: Riddle: ÅeThis thing all things devours:Birds, beasts, trees, \nflowers; Gnaws iron, bites steel; Grinds hard stones to meal; Slays king, ruins town, And beats high mountain down.Åf \n1. My ex-girlfriend \n2. Poullution \n3. Time \n4. A Sharknado");
+				"Christian: Riddle: ÅeThis thing all things devours:Birds, beasts, trees, \nflowers; Gnaws iron, bites steel; Grinds hard stones to meal; \nSlays king, ruins town, And beats high mountain down.Åf \n1. My ex-girlfriend \n2. Poullution \n3. Time \n4. A Sharknado");
 
 		correct.add("Stormy: Christian!  ItÅfs that riddle from The Hobbit, the answer is 'time'! ");
 		correct.add(
-				"Christian: Much obliged Stormy!  I really owe you one, you always know how to be \nsupportive of everyone no matter who it is.  Oh my I feel like a giant weight is off my shoulders, thanks Stormy!");
+				"Christian: Much obliged Stormy!  I really owe you one, you always know how to be \nsupportive of everyone no matter who it is.  \nOh my I feel like a giant weight is off my shoulders, thanks Stormy!");
 		correct.add(
 				"Stormy: No problem Christian, just your friendly neighborhood tough, independent, \nstrong female lead character passing through!");
 		correct.add(
@@ -173,8 +183,10 @@ public class SimpleSlickGame extends BasicGame {
 
 		dialogue4 = new Dialogue(dialogues, 3, correct, wrong);
 
+		
 		background5 = new Image("images/background5.png");
-
+		npc5 = new Char(new Image("images/AnnieOverworld.png"), 300, 100);
+		
 		dialogues = new ArrayList<String>();
 		correct = new ArrayList<String>();
 		wrong = new ArrayList<String>();
@@ -203,8 +215,10 @@ public class SimpleSlickGame extends BasicGame {
 
 		dialogue5 = new Dialogue(dialogues, 1, correct, wrong);
 
+		
 		background6 = new Image("images/background6.png");
-
+		npc6 = new Char(new Image("images/JuniperOverworld.png"), 500, 200);
+		
 		dialogues = new ArrayList<String>();
 		correct = new ArrayList<String>();
 		wrong = new ArrayList<String>();
@@ -239,8 +253,9 @@ public class SimpleSlickGame extends BasicGame {
 
 		dialogue6 = new Dialogue(dialogues, 4, correct, wrong);
 
+		
 		background7 = new Image("images/background7.jpg");
-
+		
 		dialogues = new ArrayList<String>();
 
 		dialogues.add("Stormy: Whew!  That was eventful!  IÅfm so glad everyoneÅfs okay!");
@@ -260,6 +275,11 @@ public class SimpleSlickGame extends BasicGame {
 		characters = new ArrayList<Char>();
 		characters.add(npc1);
 		characters.add(npc2);
+		characters.add(npc3);
+		characters.add(npc4);
+		characters.add(npc5);
+		characters.add(npc6);
+		characters.add(npc1);
 
 	}
 
@@ -316,6 +336,7 @@ public class SimpleSlickGame extends BasicGame {
 		} else if (scene == 3) {
 			background3.draw(0, 0, 1000, 800);
 			oldMan.render(gc, g);
+			npc3.render(gc, g);
 			if (gamemode == 2) {
 				dialogue3.render(gc, g);
 			}
@@ -323,6 +344,7 @@ public class SimpleSlickGame extends BasicGame {
 		} else if (scene == 4) {
 			background4.draw(0, 0, 1000, 800);
 			oldMan.render(gc, g);
+			npc4.render(gc, g);
 			if (gamemode == 2) {
 				dialogue4.render(gc, g);
 			}
@@ -330,6 +352,7 @@ public class SimpleSlickGame extends BasicGame {
 		} else if (scene == 5) {
 			background5.draw(0, 0, 1000, 800);
 			oldMan.render(gc, g);
+			npc5.render(gc, g);
 			if (gamemode == 2) {
 				dialogue5.render(gc, g);
 			}
@@ -337,6 +360,7 @@ public class SimpleSlickGame extends BasicGame {
 		} else if (scene == 6) {
 			background6.draw(0, 0, 1000, 800);
 			oldMan.render(gc, g);
+			npc6.render(gc, g);
 			if (gamemode == 2) {
 				dialogue6.render(gc, g);
 			}
@@ -344,6 +368,7 @@ public class SimpleSlickGame extends BasicGame {
 		} else if (scene == 7) {
 			background7.draw(0, 0, 1000, 800);
 			oldMan.render(gc, g);
+			npc1.render(gc, g);
 			if (gamemode == 2) {
 				dialogue7.render(gc, g);
 			}

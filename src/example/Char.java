@@ -26,7 +26,7 @@ public class Char {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException {
-		character.draw(x, y, 2f);
+		character.draw(x, y, 4f);
 	}
 
 	public Vector2f getVector()

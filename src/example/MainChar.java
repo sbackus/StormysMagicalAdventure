@@ -48,11 +48,11 @@ public class MainChar {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException {
-		character.draw(x, y, 60, 96);
+		character.draw(x, y, 120, 192);
 	}
 
 	public boolean collide(Char target) {
-		return target.getVector().distance(new Vector2f(x, y)) <= 60;
+		return target.getVector().distance(new Vector2f(x, y)) <= 150;
 	}
 	
 	public void move()
