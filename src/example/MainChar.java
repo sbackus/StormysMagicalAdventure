@@ -12,7 +12,6 @@ import org.newdawn.slick.geom.Vector2f;
 public class MainChar {
 
 	int x, y;
-	int gamemode = 1;
 
 	Image character;
 
@@ -59,11 +58,5 @@ public class MainChar {
 		return target.getVector().distance(new Vector2f(x, y)) <= 60;
 	}
 	
-	public int getGamemode()
-	{
-		int temp = gamemode;
-		gamemode = 1;
-		return temp;
-	}
 
 }

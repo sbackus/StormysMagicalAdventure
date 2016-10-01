@@ -43,7 +43,7 @@ public class SimpleSlickGame extends BasicGame {
 
 	@Override
 	public void update(GameContainer gc, int i) throws SlickException {
-		System.out.println(gamemode);
+
 
 		if (gamemode == 1) {
 			oldMan.update(gc, i, characters, this);

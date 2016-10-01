@@ -11,8 +11,9 @@ public class Dialogue {
 
 	int x, y;
 	int target = 0;
-	int gamemode = 2;
 
+	boolean riddleCond = false;
+	boolean endCond = false;
 	ArrayList<String> dialogues;
 
 	Image dialogue;
@@ -27,7 +28,10 @@ public class Dialogue {
 		dialogues.add("Hello");
 		dialogues.add("Good bye");
 		dialogues.add("what's up \n its 2:30AM");
-
+		dialogues.add("Riddle Time!");
+		dialogues.add("Riddle: \n What is the thing for the thing \n1. Correct Answer\n2. option 2\n3. option 3\n4. option 4");
+		dialogues.add("You are correct");
+		dialogues.add("You are wrong");
 	}
 
 	public void init(GameContainer gc) throws SlickException {
@@ -37,24 +41,36 @@ public class Dialogue {
 	public void update(GameContainer gc, int i, SimpleSlickGame game) throws SlickException {
 		Input input = gc.getInput();
 
-		if (input.isKeyPressed(Input.KEY_SPACE) && target < dialogues.size() ) {
+		if (target == dialogues.size() - 3) {
+			riddleCond = true;
+		}
+		if (input.isKeyPressed(Input.KEY_1) && riddleCond == true) {
+			target = dialogues.size() - 2;
+			riddleCond = false;
+			endCond = true;
+		} else if (input.isKeyPressed(Input.KEY_2) && riddleCond == true) {
+			target = dialogues.size() - 1;
+			riddleCond = false;
+		} else if (input.isKeyPressed(Input.KEY_3) && riddleCond == true) {
+			target = dialogues.size() - 1;
+			riddleCond = false;
+		} else if (input.isKeyPressed(Input.KEY_4) && riddleCond == true) {
+			target = dialogues.size() - 1;
+			riddleCond = false;
+		} else if (input.isKeyPressed(Input.KEY_SPACE) && target < dialogues.size() && riddleCond == false) {
 			target++;
-		} else if (target == dialogues.size() ) {
+		} else if (target == dialogues.size() || (target == dialogues.size() - 1 && endCond == true)) {
 			game.toggleGamemode();
 			target = 0;
 		}
+
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException {
 		dialogue.draw(x, y, 900, 175);
+
 		if (target < dialogues.size()) {
 			g.drawString(dialogues.get(target), 75, 625);
 		}
-	}
-
-	public int getGamemode() {
-		int temp = gamemode;
-		gamemode = 2;
-		return temp;
 	}
 }
