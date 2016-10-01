@@ -13,14 +13,14 @@ import org.newdawn.slick.Image;
 public class SimpleSlickGame extends BasicGame {
 	Image shark;
 	Image background;
-	
+
 	MainChar oldMan;
 	Char npc1;
 
 	Dialogue dialogue;
 
-	int gamemode;
-	
+	int gamemode = 1;
+
 	ArrayList<Char> characters;
 
 	public SimpleSlickGame(String gamename) {
@@ -29,6 +29,7 @@ public class SimpleSlickGame extends BasicGame {
 
 	@Override
 	public void init(GameContainer gc) throws SlickException {
+
 		shark = new Image("images/shark.gif");
 		background = new Image("images/background.jpg");
 		oldMan = new MainChar(new Image("images/oldman.jpg"));
@@ -42,8 +43,14 @@ public class SimpleSlickGame extends BasicGame {
 
 	@Override
 	public void update(GameContainer gc, int i) throws SlickException {
-		oldMan.update(gc, i, characters);
-		dialogue.update(gc, i);
+		System.out.println(gamemode);
+
+		if (gamemode == 1) {
+			oldMan.update(gc, i, characters, this);
+		} else if (gamemode == 2) {
+			dialogue.update(gc, i, this);
+		}
+
 	}
 
 	@Override
@@ -52,9 +59,20 @@ public class SimpleSlickGame extends BasicGame {
 		// shark.draw(250, 300);
 
 		background.draw(0, 0, 1000, 800);
-		oldMan.render(gc, g);
 		npc1.render(gc, g);
-		dialogue.render(gc, g);
+		oldMan.render(gc, g);
+		if (gamemode == 2) {
+			dialogue.render(gc, g);
+		}
+
+	}
+	
+	public void toggleGamemode()
+	{
+		if (gamemode == 1)
+			gamemode = 2;
+		else
+			gamemode = 1;
 	}
 
 	public static void main(String[] args) {

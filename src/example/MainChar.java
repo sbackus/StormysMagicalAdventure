@@ -12,6 +12,7 @@ import org.newdawn.slick.geom.Vector2f;
 public class MainChar {
 
 	int x, y;
+	int gamemode = 1;
 
 	Image character;
 
@@ -29,12 +30,12 @@ public class MainChar {
 
 	}
 
-	public void update(GameContainer gc, int i, ArrayList<Char> character) throws SlickException {
+	public void update(GameContainer gc, int i, ArrayList<Char> character, SimpleSlickGame game) throws SlickException {
 		Input input = gc.getInput();
 
 		for (int j = 0; j < character.size(); j++) {
-			if (this.collide(character.get(j))) {
-				x += 100;
+			if (this.collide(character.get(j)) && input.isKeyPressed(Input.KEY_SPACE)) {
+				game.toggleGamemode();
 				
 			}
 		}
@@ -56,6 +57,13 @@ public class MainChar {
 
 	public boolean collide(Char target) {
 		return target.getVector().distance(new Vector2f(x, y)) <= 60;
+	}
+	
+	public int getGamemode()
+	{
+		int temp = gamemode;
+		gamemode = 1;
+		return temp;
 	}
 
 }
