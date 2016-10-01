@@ -23,7 +23,7 @@ public class Dialogue {
 	ArrayList<String> correct;
 	ArrayList<String> wrong;
 	int rightAnswer;
-	
+
 	CharAnimation mainCharAnimation;
 
 	Image dialogueBackground;
@@ -33,8 +33,9 @@ public class Dialogue {
 		dialogueBackground = new Image("images/textbox.png");
 		x = 50;
 		y = 600;
-		
-		mainCharAnimation = new CharAnimation(new Image []{new Image("images/Stormy1.png"), new Image("images/Stormy2.png"), new Image("images/Stormy3.png")},50, 20);
+
+		mainCharAnimation = new CharAnimation(new Image[] { new Image("images/Stormy1.png"),
+				new Image("images/Stormy2.png"), new Image("images/Stormy3.png") }, 50, 20);
 		rightAnswer = _rightAnswer;
 		dialogues = _dialogues;
 		correct = _correct;
@@ -46,8 +47,9 @@ public class Dialogue {
 		x = 50;
 		y = 600;
 
-		mainCharAnimation = new CharAnimation(new Image []{new Image("images/Stormy1.png"), new Image("images/Stormy2.png"), new Image("images/Stormy3.png")},50, 20);
-		
+		mainCharAnimation = new CharAnimation(new Image[] { new Image("images/Stormy1.png"),
+				new Image("images/Stormy2.png"), new Image("images/Stormy3.png") }, 50, 20);
+
 		dialogues = _dialogues;
 	}
 
@@ -57,9 +59,9 @@ public class Dialogue {
 
 	public void update(GameContainer gc, int i, SimpleSlickGame game) throws SlickException {
 		Input input = gc.getInput();
-		
+
 		mainCharAnimation.update(i);
-		
+
 		System.out.println(game.getScene());
 
 		if (dialogues.get(currentLine).contains("Riddle:")) {
@@ -123,27 +125,78 @@ public class Dialogue {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException {
-		
+
 		String line = "";
 		if (track == 1) {
 			if (currentLine < dialogues.size()) {
 				line = dialogues.get(currentLine);
+				if (line.contains("Javaris:")) {
+					javarisAnimation.draw();
+				}
+				if (line.contains("Annie:")) {
+					annieSad.draw();
+				}
+				if (line.contains("Leopold:")) {
+					leoSad.draw();
+				}
+				if (line.contains("Juniper:")) {
+					juniperSad.draw();
+				}
+				if (line.contains("Christian:")) {
+					christianSad.draw();
+				}
+				if (line.contains("Julian:")) {
+					julianSad.draw();
+				}
+
 			}
 		} else if (track == 2) {
 			if (currentLine < correct.size()) {
 				line = correct.get(currentLine);
+				if (line.contains("Javaris:")) {
+					javarisAnimation.draw();
+				}
+				if (line.contains("Annie:")) {
+					annieHappy.draw();
+				}
+				if (line.contains("Leopold:")) {
+					leoHappy.draw();
+				}
+				if (line.contains("Juniper:")) {
+					juniperHappy.draw();
+				}
+				if (line.contains("Christian:")) {
+					christianHappy.draw();
+				}
+				if (line.contains("Julian:")) {
+					julianHappy.draw();
+				}
 			}
 		} else if (track == 3) {
 			if (currentLine < wrong.size()) {
 				line = wrong.get(currentLine);
+				if (line.contains("Javaris:")) {
+					javarisAnimation.draw();
+				}
+				if (line.contains("Annie:")) {
+					annieSad.draw();
+				}
+				if (line.contains("Leopold:")) {
+					leoSad.draw();
+				}
+				if (line.contains("Juniper:")) {
+					juniperSad.draw();
+				}
+				if (line.contains("Christian:")) {
+					christianSad.draw();
+				}
+				if (line.contains("Julian:")) {
+					julianSad.draw();
+				}
 			}
 		}
-		if (line.contains("Stormy: ")){
+		if (line.contains("Stormy: ")) {
 			mainCharAnimation.draw();
-		}
-		if (line.contains("Javaris: "))
-		{
-			
 		}
 		dialogueBackground.draw(x, y, 900, 175);
 		g.drawString(line, 75, 625);
