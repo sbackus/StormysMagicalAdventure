@@ -7,18 +7,19 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
-public class Dialogue {
+public class Dialogue1 {
 
 	int x, y;
 	int target = 0;
 
 	boolean riddleCond = false;
 	boolean endCond = false;
+	boolean nextScene = false;
 	ArrayList<String> dialogues;
 
 	Image dialogue;
 
-	public Dialogue(Image image, int _x, int _y) {
+	public Dialogue1(Image image, int _x, int _y) {
 		dialogue = image;
 		x = _x;
 		y = _y;
@@ -62,6 +63,10 @@ public class Dialogue {
 		} else if (target == dialogues.size() || (target == dialogues.size() - 1 && endCond == true)) {
 			game.toggleGamemode();
 			target = 0;
+			if (endCond == true)
+			{
+				game.nextScene();
+			}
 		}
 
 	}
@@ -73,4 +78,5 @@ public class Dialogue {
 			g.drawString(dialogues.get(target), 75, 625);
 		}
 	}
+	
 }

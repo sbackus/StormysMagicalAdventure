@@ -32,13 +32,10 @@ public class MainChar {
 	public void update(GameContainer gc, int i, ArrayList<Char> character, SimpleSlickGame game) throws SlickException {
 		Input input = gc.getInput();
 
-		for (int j = 0; j < character.size(); j++) {
-			if (this.collide(character.get(j)) && input.isKeyPressed(Input.KEY_SPACE)) {
-				game.toggleGamemode();
-				
-			}
+		if (this.collide(character.get(game.getScene()-1)) && input.isKeyPressed(Input.KEY_SPACE))
+		{
+			game.toggleGamemode();
 		}
-
 		if (input.isKeyDown(Input.KEY_UP)) {
 			y -= 1;
 		} else if (input.isKeyDown(Input.KEY_DOWN)) {
@@ -56,6 +53,12 @@ public class MainChar {
 
 	public boolean collide(Char target) {
 		return target.getVector().distance(new Vector2f(x, y)) <= 60;
+	}
+	
+	public void move()
+	{
+		x = 500;
+		y = 400;
 	}
 	
 
