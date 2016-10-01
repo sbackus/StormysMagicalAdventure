@@ -91,7 +91,8 @@ public class Dialogue {
 
 		} else if (input.isKeyPressed(Input.KEY_SPACE) && !dialogues.get(currentLine).contains("Riddle:")) {
 			currentLine++;
-		} else if (track == 1) {
+		}
+		if (track == 1) {
 			if (currentLine == dialogues.size()) {
 				game.toggleGamemode();
 				currentLine = 0;

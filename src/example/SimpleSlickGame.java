@@ -90,7 +90,7 @@ public class SimpleSlickGame extends BasicGame {
 		dialogues.add(
 				"Leopold: Actually, can you answer a couple of questions for me?  ItÅfs for this creative \nwriting class IÅfm taking, some wizard looking character said you \nmay be able to helpÅc");
 		dialogues.add(
-				"Leopold: Okay here it is: ÅeThe more you have of it the less you seeÅf.  What could that \npossibly be referring to? \n1. Money \n2. Darkness \n3. An illusion \n4. Attitude");
+				"Leopold: Riddle: ÅeThe more you have of it the less you seeÅf.  What could that \npossibly be referring to? \n1. Money \n2. Darkness \n3. An illusion \n4. Attitude");
 
 		correct.add("Leopold: ThatÅfs it! That has to be it! ");
 		correct.add(
@@ -104,7 +104,7 @@ public class SimpleSlickGame extends BasicGame {
 
 		dialogue2 = new Dialogue(dialogues, 2, correct, wrong);
 
-		background3 = new Image("images/background3.jpg");
+		background3 = new Image("images/background3.png");
 
 		dialogues = new ArrayList<String>();
 		correct = new ArrayList<String>();
@@ -122,7 +122,7 @@ public class SimpleSlickGame extends BasicGame {
 		dialogues.add(
 				"Julian: ItÅfs not funny.  Actually funny youÅfre here, this old bloke came by and \nmentioned you may be able to help.");
 		dialogues.add(
-				"Julian: Okay so here it is: ÅeWhy do chemists like nitrates so much?Åf I canÅft think \nof anything beyond the obvious scientific reasons! \n1. They're cheaper than day rates \n2. Polyatmoic ions are lyfe \n3. Because those chemists need to go outside \n4. Because... science?");
+				"Julian: Riddle: ÅeWhy do chemists like nitrates so much?Åf I canÅft think \nof anything beyond the obvious scientific reasons! \n1. They're cheaper than day rates \n2. Polyatmoic ions are lyfe \n3. Because those chemists need to go outside \n4. Because... science?");
 
 		correct.add(
 				"Julian: That was probably the worst joke IÅfve ever heard, but I think thatÅfs the solution!  Why do our professors torture us so?");
@@ -136,7 +136,7 @@ public class SimpleSlickGame extends BasicGame {
 
 		dialogue3 = new Dialogue(dialogues, 1, correct, wrong);
 
-		background4 = new Image("images/background4.jpg");
+		background4 = new Image("images/background4.png");
 
 		dialogues = new ArrayList<String>();
 		correct = new ArrayList<String>();
@@ -159,7 +159,7 @@ public class SimpleSlickGame extends BasicGame {
 		dialogues.add(
 				"Stormy: Oh no maybe I can help?  ItÅfs gonna sound crazy but I had this dream and this \neccentric wizard dude said you may be having some trouble with \nfinals so I came to check on you.");
 		dialogues.add(
-				"Christian: Okay here it is: ÅeThis thing all things devours:Birds, beasts, trees, \nflowers; Gnaws iron, bites steel; Grinds hard stones to meal; Slays king, ruins town, And beats high mountain down.Åf \n1. My ex-girlfriend \n2. Poullution \n3. Time \n4. A Sharknado");
+				"Christian: Riddle: ÅeThis thing all things devours:Birds, beasts, trees, \nflowers; Gnaws iron, bites steel; Grinds hard stones to meal; Slays king, ruins town, And beats high mountain down.Åf \n1. My ex-girlfriend \n2. Poullution \n3. Time \n4. A Sharknado");
 
 		correct.add("Stormy: Christian!  ItÅfs that riddle from The Hobbit, the answer is 'time'! ");
 		correct.add(
@@ -173,7 +173,7 @@ public class SimpleSlickGame extends BasicGame {
 
 		dialogue4 = new Dialogue(dialogues, 3, correct, wrong);
 
-		background5 = new Image("images/background5.jpg");
+		background5 = new Image("images/background5.png");
 
 		dialogues = new ArrayList<String>();
 		correct = new ArrayList<String>();
@@ -190,7 +190,7 @@ public class SimpleSlickGame extends BasicGame {
 		dialogues.add(
 				"Stormy: IÅfve been helping a lot of people with problems like these lately!  Let me \ntake a look at it!");
 		dialogues.add(
-				"Annie: Okay so here it is! ÅeI go around in circles, but always straight ahead, never \ncomplain, no matter where I am led.Åf  I canÅft even begin to figure this out. \n1. A wheel \n2. A donkey \n3. A servant \n4. A unicycle");
+				"Annie: Riddle: ÅeI go around in circles, but always straight ahead, never \ncomplain, no matter where I am led.Åf  I canÅft even begin to figure this out. \n1. A wheel \n2. A donkey \n3. A servant \n4. A unicycle");
 
 		correct.add("Stormy: Hey Annie, donÅft you go to WHEELock?");
 		correct.add("Annie: ÅgOh of course!  A wheel!  ThatÅfs so obvious, I canÅft believe I didnÅft see that!");
@@ -203,7 +203,7 @@ public class SimpleSlickGame extends BasicGame {
 
 		dialogue5 = new Dialogue(dialogues, 1, correct, wrong);
 
-		background6 = new Image("images/background6.jpg");
+		background6 = new Image("images/background6.png");
 
 		dialogues = new ArrayList<String>();
 		correct = new ArrayList<String>();
@@ -222,7 +222,7 @@ public class SimpleSlickGame extends BasicGame {
 		dialogues.add(
 				"Stormy: Oh give me a shot at it!  Maybe IÅfll be able to provide some other insight \nand we can figure it out together!");
 		dialogues.add(
-				"Juniper: Okay so here it is: ÅeI have keys but do not lock. I have space but have no \nroom. You can enter but not come in. What am I?Åf \n1. The void \n2. The bank \n3. A vampire's coffin \n4. A keyboard");
+				"Juniper: Riddle: ÅeI have keys but do not lock. I have space but have no \nroom. You can enter but not come in. What am I?Åf \n1. The void \n2. The bank \n3. A vampire's coffin \n4. A keyboard");
 
 		correct.add(
 				"Juniper: Oh wow, thatÅfs actually a little corny to be honest, I canÅft believe I couldnÅft \nfigure that out.");
@@ -297,7 +297,6 @@ public class SimpleSlickGame extends BasicGame {
 	@Override
 	public void render(GameContainer gc, Graphics g) throws SlickException {
 
-		// shark.draw(250, 300);
 		if (scene == 1) {
 			background1.draw(0, 0, 1000, 800);
 			npc1.render(gc, g);
